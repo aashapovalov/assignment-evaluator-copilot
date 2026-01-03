@@ -1,4 +1,4 @@
-import { mlService } from '../services/ml-service.js';
+import { mlService } from '../services';
 
 export const healthController = {
   async checkHealth(req, res, next) {
