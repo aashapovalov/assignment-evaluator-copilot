@@ -2,6 +2,8 @@ import express from 'express';
 import cors from 'cors';
 
 import {evaluationRouter, healthRouter} from "./routes";
+import {errorHandler} from "./middleware";
+import {config} from "./config";
 
 const app = express();
 
@@ -13,12 +15,16 @@ app.use(cors());
 app.use('/', healthRouter);
 app.use('/', evaluationRouter);
 
+// Error handler
+app.use(errorHandler);
 
-const PORT = process.env.PORT || 5051;
-app.listen(PORT, () => {
-console.log('\n' + '-'.repeat(60));
-console.log(`✓ Node.js backend running on http://localhost:${PORT}`);
-console.log(`✓ ML service: ${ML_SERVICE_URL}`);
-console.log('\nTest: curl http://localhost:${PORT}/health');
-console.log('='.repeat(60) + '\n');
-})
+// Start server
+app.listen(config.port, () => {
+  console.log('\n' + '='.repeat(60));
+  console.log(`✓ Node.js backend running on http://localhost:${config.port}`);
+  console.log(`✓ ML service: ${config.mlServiceUrl}`);
+  console.log(`\nEndpoints:`);
+  console.log(`  GET  /health`);
+  console.log(`  POST /api/evaluate`);
+  console.log('\n' + '='.repeat(60) + '\n');
+});
