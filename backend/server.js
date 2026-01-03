@@ -11,7 +11,7 @@ app.use(express.json());
 app.use(cors());
 
 //Colab ML service URL
-const ML_SERVICE_URL = 'https://reflects-mens-define-furthermore.trycloudflare.com'';
+const ML_SERVICE_URL = 'https://reflects-mens-define-furthermore.trycloudflare.com';
 
 app.get('/health', async (req, res) => {
   try {
