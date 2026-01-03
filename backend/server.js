@@ -1,14 +1,17 @@
 import express from 'express';
 import cors from 'cors';
-import fs from 'fs';
-import axios from 'axios';
 import multer from 'multer';
+
+import { healthRoute } from "./routes";
 
 const app = express();
 const upload = multer({ dest: 'uploads/' });
 
 app.use(express.json());
 app.use(cors());
+
+//routes
+app.use('/', healthRoute);
 
 
 const PORT = process.env.PORT || 5051;
