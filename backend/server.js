@@ -1,16 +1,15 @@
 import express from 'express';
 import cors from 'cors';
-import multer from 'multer';
 
 import { healthRoute } from "./routes";
 
 const app = express();
-const upload = multer({ dest: 'uploads/' });
 
+// Middleware
 app.use(express.json());
 app.use(cors());
 
-//routes
+// Routes
 app.use('/', healthRoute);
 
 
