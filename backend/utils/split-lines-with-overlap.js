@@ -3,7 +3,7 @@ Function for extracting chunks of code from big notebook cells to
 prevent creation of very general embeddings which are too hard to assess and
 compare with requirements
 */
-import {CHUNK_OVERLAP, LINES_PER_CHUNK} from "../globals";
+import {CHUNK_OVERLAP, LINES_PER_CHUNK} from "../globals/globals.js";
 
 export function splitLinesWithOverlap(source) {
   const lines = source.split('\n');
