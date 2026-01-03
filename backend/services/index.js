@@ -1,4 +1,5 @@
 import { mlService} from "./ml-service.js";
-import { extractForRubric } from "./evidence-service.js";
+import { evidenceService } from "./evidence-service.js";
+import { scoringService } from "./scoring-service.js";
 
-export { mlService, extractForRubric };
+export { mlService, evidenceService, scoringService };

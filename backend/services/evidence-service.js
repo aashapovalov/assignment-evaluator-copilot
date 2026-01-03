@@ -5,7 +5,7 @@ import { mlService } from './';
    * - retrieve top-k relevant chunks (vector search)
    * - ask LLM to judge PASS/FAIL/PARTIAL with reasoning
    */
-  export async function extractForRubric({ rubric, chunks, embeddings, k = 3 }) {
+  export async function evidenceService({ rubric, chunks, embeddings, k = 3 }) {
     const chunksMetadata = chunks.map((chunk, index) => ({
       index: index,
       cell_index: chunk.cell_index,
