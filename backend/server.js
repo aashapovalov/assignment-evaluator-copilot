@@ -1,7 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 
-import { healthRoute } from "./routes";
+import {evaluationRouter, healthRouter} from "./routes";
 
 const app = express();
 
@@ -10,7 +10,8 @@ app.use(express.json());
 app.use(cors());
 
 // Routes
-app.use('/', healthRoute);
+app.use('/', healthRouter);
+app.use('/', evaluationRouter);
 
 
 const PORT = process.env.PORT || 5051;

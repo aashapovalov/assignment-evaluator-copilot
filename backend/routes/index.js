@@ -1,3 +1,4 @@
-import { healthRoute } from "./health-route.js";
+import { healthRouter } from "./health-route.js";
+import { evaluationRouter } from "./evaluation-route.js";
 
-export { healthRoute };
+export { healthRouter, evaluationRouter };
