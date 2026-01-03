@@ -2,8 +2,8 @@
 function iterates through cell object and cuts code in chunks if cell is too big to analyze it
  */
 
-import {MAX_CELL_LINES} from "../globals";
-import { splitLinesWithOverlap } from "./";
+import {MAX_CELL_LINES} from "../globals/index.js";
+import { splitLinesWithOverlap } from "./split-lines-with-overlap.js";
 
 export function extractChunksFromNotebook(notebook) {
   const chunks = [];

@@ -1,4 +1,4 @@
-import {calculateBreakdown, calculatePoints} from "../utils";
+import {calculateBreakdown, calculatePoints} from "../utils/index.js";
 
 /**
    * Builds final report object returned to the client.

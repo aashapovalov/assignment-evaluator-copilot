@@ -1,4 +1,5 @@
 import axios from 'axios';
+
 import { config } from '../config/index.js';
 
 const mlClient = axios.create({

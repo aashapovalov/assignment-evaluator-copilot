@@ -1,4 +1,4 @@
-import { mlService } from './';
+import { mlService } from './ml-service.js';
 
   /**
    * For each rubric requirement:

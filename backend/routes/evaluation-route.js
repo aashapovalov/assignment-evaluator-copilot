@@ -1,7 +1,8 @@
 import { Router } from 'express';
 
-import { evaluationController } from '../controllers';
-import { upload } from '../middleware';
+import { evaluationController } from '../controllers/index.js';
+
+import { upload } from '../middleware/index.js';
 
 export const evaluationRouter = Router();
 

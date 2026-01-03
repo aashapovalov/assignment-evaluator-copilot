@@ -1,5 +1,5 @@
 import fs from 'fs/promises';
-import { evaluationService } from '../services';
+import { evaluationService } from '../services/index.js';
 
 export async function evaluationController (req, res, next){
   /**

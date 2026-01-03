@@ -1,9 +1,9 @@
 import express from 'express';
 import cors from 'cors';
 
-import {evaluationRouter, healthRouter} from "./routes";
-import {errorHandler} from "./middleware";
-import {config} from "./config";
+import { evaluationRouter, healthRouter } from "./routes/index.js";
+import {errorHandler} from "./middleware/index.js";
+import {config} from "./config/index.js";
 
 const app = express();
 

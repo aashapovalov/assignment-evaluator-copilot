@@ -1,7 +1,10 @@
 import fs from 'fs/promises';
+
 import { mlService } from './ml-service.js';
-import { extractChunksFromNotebook} from "../utils";
-import { evidenceService, scoringService } from './';
+
+import { extractChunksFromNotebook} from "../utils/index.js";
+import { evidenceService } from './evidence-service.js';
+import { scoringService } from './scoring-service.js';
 
 /**
  * Orchestrates the full evaluation pipeline.
