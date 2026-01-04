@@ -1,4 +1,4 @@
-import './ResultsPage.css';
+import './results.css';
 
 export function ResultsPage({ result, onReset }) {
   const getStatusColor = (status) => {
