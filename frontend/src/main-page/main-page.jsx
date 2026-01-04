@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import './MainPage.css';
+import './main-page.css';
 
 // Import images
 import appLogoDark from '../assets/logo/app_logo_dark.png';
@@ -8,6 +8,7 @@ import btnUploadTxt from '../assets/logo/btn_upload_txt.png';
 import iconReadAssignment from '../assets/logo/icon_read_assignment.png';
 import iconReadSolution from '../assets/logo/icon_read_solution.png';
 import iconGetEvaluation from '../assets/logo/icon_get_evaluation.png';
+import {appTitleDark} from "../assets/logo/index.js";
 
 export function MainPage({ onEvaluate }) {
   const [notebookFile, setNotebookFile] = useState(null);
@@ -32,18 +33,17 @@ export function MainPage({ onEvaluate }) {
 
   return (
       <div className="main-page">
+
         {/* Header */}
         <header className="header">
-          <div className="header-content">
+          <div className="header-logo-title">
             <img src={appLogoDark} alt="DidYouEvenCode Logo" className="logo" />
-            <div className="header-text">
-              <h1 className="title">DidYouEvenCode?</h1>
-              <p className="subtitle">
-                An AI that actually checks.<br />
-                Not vibes. Not intentions. <span className="highlight">Your code.</span>
-              </p>
-            </div>
+            <img src={appTitleDark} alt="DidYouEvenCode" className="title-image" />
           </div>
+          <p className="subtitle">
+            An AI that actually checks.<br />
+            Not vibes. Not intentions. <span className="highlight">Your code.</span>
+          </p>
         </header>
 
         {/* Hero Section */}
