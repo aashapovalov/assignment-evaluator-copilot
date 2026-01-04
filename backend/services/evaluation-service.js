@@ -34,7 +34,7 @@ export async function evaluationService({ assignmentPath, notebookPath }) {
 
     // 5) Extract evidence per requirement
     console.log('3️⃣ Extracting evidence...');
-    const evidenceResults = await evidenceService.extractForRubric({
+    const evidenceResults = await evidenceService({
       rubric,
       chunks,
       embeddings,
@@ -43,7 +43,7 @@ export async function evaluationService({ assignmentPath, notebookPath }) {
     console.log(`✓ Evidence extracted for ${evidenceResults.length} requirements`);
 
     // 6) Score and build report
-    return scoringService.buildReport({
+    return scoringService({
       rubric,
       evidenceResults,
     });

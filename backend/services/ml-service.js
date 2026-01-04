@@ -27,8 +27,11 @@ export const mlService = {
       assignment_text: assignmentText,
     });
 
+    console.log('Rubric compilation response:', JSON.stringify(response.data, null, 2));
+
     if (!response.data.success) {
-      throw new Error('Rubric compilation failed');
+      console.error('Rubric compilation failed:', response.data);
+      throw new Error(`Rubric compilation failed: ${response.data.error || response.data.raw_response}`);
     }
 
     return response.data.rubric;
