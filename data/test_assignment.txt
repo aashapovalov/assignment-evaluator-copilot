@@ -1,0 +1,22 @@
+Assignment: Text Summarization with T5
+
+Part 1: Data Loading
+- Load train.csv and test.csv using pandas
+- Sample 100 rows from each dataset
+- Display first 3 examples
+
+Part 2: Model Setup
+- Import T5ForConditionalGeneration and AutoTokenizer
+- Load t5-small model
+- Check CUDA availability
+- Set model to evaluation mode
+
+Part 3: Summarization
+- Create summarize() function
+- Use model.generate() with max_length=150
+- Test on 5 examples
+
+Part 4: ROUGE Evaluation
+- Load ROUGE metric using evaluate library
+- Compute ROUGE-1, ROUGE-2, ROUGE-L
+- Display scores
