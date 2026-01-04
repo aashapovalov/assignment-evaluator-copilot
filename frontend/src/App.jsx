@@ -2,7 +2,7 @@ import { useState } from 'react';
 import axios from 'axios';
 
 import { MainPage } from './main-page/index.js';
-//import ResultsPage from './components/ResultsPage';
+import { ResultsPage } from './results/index.js';
 import './App.css';
 
 function App() {
@@ -58,9 +58,9 @@ function App() {
     );
   }
 
-  //if (result) {
-  //  return <ResultsPage result={result} onReset={handleReset} />;
-  //}
+  if (result) {
+    return <ResultsPage result={result} onReset={handleReset} />;
+  }
 
   return <MainPage onEvaluate={handleEvaluate} />;
 }
