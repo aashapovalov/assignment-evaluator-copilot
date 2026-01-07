@@ -5,6 +5,10 @@ import { MainPage } from './main-page/index.js';
 import { ResultsPage } from './results/index.js';
 import './App.css';
 
+// Environment variables
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5051';
+const REQUEST_TIMEOUT = parseInt(import.meta.env.VITE_REQUEST_TIMEOUT) || 300000;
+
 function App() {
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState(null);
@@ -20,9 +24,9 @@ function App() {
     formData.append('assignment', assignmentFile);
 
     try {
-      const response = await axios.post(`http://localhost:5051/api/evaluate`, formData, {
+      const response = await axios.post(`${API_URL}/api/evaluate`, formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
-        timeout: 120000,
+        timeout: REQUEST_TIMEOUT,
       });
 
       setResult(response.data);
@@ -43,7 +47,7 @@ function App() {
         <div className="loading-screen">
           <div className="spinner"></div>
           <h2>Evaluating your code...</h2>
-          <p>This may take 30-60 seconds</p>
+          <p>This may take 10-20 seconds</p>
         </div>
     );
   }
