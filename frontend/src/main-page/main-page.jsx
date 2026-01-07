@@ -75,7 +75,7 @@ export function MainPage({ onEvaluate }) {
                   <input
                       type="file"
                       id="assignment-input"
-                      accept=".pdf,.txt"
+                      accept=".txt"
                       onChange={handleAssignmentChange}
                       className="file-input"
                   />
